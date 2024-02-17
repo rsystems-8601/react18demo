@@ -32,17 +32,17 @@ const MainLayout = () => {
   };
 
   // set media wise responsive drawer
-  useEffect(() => {
-    setOpen(!matchDownLG);
-    dispatch(openDrawer({ drawerOpen: !matchDownLG }));
+  // useEffect(() => {
+  //   setOpen(!matchDownLG);
+  //   dispatch(openDrawer({ drawerOpen: !matchDownLG }));
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [matchDownLG]);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [matchDownLG]);
 
-  useEffect(() => {
-    if (open !== drawerOpen) setOpen(drawerOpen);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawerOpen]);
+  // useEffect(() => {
+  //   if (open !== drawerOpen) setOpen(drawerOpen);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [drawerOpen]);
 
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>

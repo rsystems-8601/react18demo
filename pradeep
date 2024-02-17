@@ -1,0 +1,34 @@
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  577.71 kB  build\static\js\main.d3977e1a.js
+  153.75 kB  build\static\js\402.84d317dc.chunk.js
+  31.5 kB    build\static\js\73.799b383f.chunk.js
+  23.32 kB   build\static\js\766.7709e35a.chunk.js
+  11.76 kB   build\static\js\469.37e142e3.chunk.js
+  5.73 kB    build\static\js\703.63b171f6.chunk.js
+  3.67 kB    build\static\js\122.e0efe590.chunk.js
+  3 kB       build\static\js\298.7da48ca2.chunk.js
+  2.79 kB    build\static\js\740.b5677068.chunk.js
+  2.65 kB    build\static\js\685.835effa4.chunk.js
+  2.33 kB    build\static\js\297.cbd486d6.chunk.js
+  2.2 kB     build\static\js\381.6d9c783b.chunk.js
+  2.05 kB    build\static\js\532.d5374251.chunk.js
+  866 B      build\static\css\main.e1f2bb6b.css
+  710 B      build\static\js\378.03a027d4.chunk.js
+
+The bundle size is significantly larger than recommended.
+Consider reducing it with code splitting: https://goo.gl/9VhYWB
+You can also analyze the project dependencies: https://goo.gl/LeUzfb
+
+The project was built assuming it is hosted at /pradeep/.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+

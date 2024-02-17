@@ -20,10 +20,11 @@ import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
+// pradeep
 root.render(
   <StrictMode>
     <ReduxProvider store={store}>
-      <BrowserRouter basename="/free">
+      <BrowserRouter basename="/pradeep">
         <App />
       </BrowserRouter>
     </ReduxProvider>
