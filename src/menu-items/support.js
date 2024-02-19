@@ -15,6 +15,13 @@ const support = {
   type: 'group',
   children: [
     {
+      id: 'employee',
+      title: 'Employee',
+      type: 'item',
+      url: '/employee',
+      icon: icons.ChromeOutlined
+    },
+    {
       id: 'sample-page',
       title: 'Sample Page',
       type: 'item',
