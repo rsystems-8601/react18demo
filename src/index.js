@@ -20,11 +20,11 @@ import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-// pradeep
+// pradeep basename="/index.html"
 root.render(
   <StrictMode>
     <ReduxProvider store={store}>
-      <BrowserRouter basename="/pradeep">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ReduxProvider>
