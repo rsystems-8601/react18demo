@@ -1,5 +1,7 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link as RouterLink, redirect, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginAccount } from '../../../store/reducers/authSlice';
 
 // material-ui
 import {
@@ -33,8 +35,28 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 const AuthLogin = () => {
   const [checked, setChecked] = React.useState(false);
-
   const [showPassword, setShowPassword] = React.useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const storeEmail = useSelector((state) => state.authSlice.email);
+  const storePassword = useSelector((state) => state.authSlice.password);
+  const token = useSelector((state) => state.authSlice.token);
+  useEffect(() => {
+    isAlreadySignin();
+  }, [token]);
+
+  const isAlreadySignin = () => {
+    if(token === 22222){
+      navigate('/');
+      // return redirect("/register");
+    }
+  };
+
+  // self revoke function
+  // (function () {
+  //   alert(token+99);
+  // })(token);
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -43,12 +65,20 @@ const AuthLogin = () => {
     event.preventDefault();
   };
 
+  const signin = (...rest) => {
+    const [values, setStatus, setSubmitting] = rest;
+    const newObj = { ...values, token: 22222 };
+    dispatch(loginAccount(newObj));
+    setStatus({ success: false });
+    setSubmitting(false);
+  };
+
   return (
     <>
       <Formik
         initialValues={{
-          email: 'info@codedthemes.com',
-          password: '123456',
+          email: storeEmail,
+          password: storePassword,
           submit: null
         }}
         validationSchema={Yup.object().shape({
@@ -57,8 +87,7 @@ const AuthLogin = () => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            setStatus({ success: false });
-            setSubmitting(false);
+            signin(values, setStatus, setSubmitting);
           } catch (err) {
             setStatus({ success: false });
             setErrors({ submit: err.message });
@@ -69,6 +98,9 @@ const AuthLogin = () => {
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit}>
             <Grid container spacing={3}>
+              <Grid item xs={12}>
+                {storeEmail}
+              </Grid>
               <Grid item xs={12}>
                 <Stack spacing={1}>
                   <InputLabel htmlFor="email-login">Email Address</InputLabel>

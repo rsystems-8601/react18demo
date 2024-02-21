@@ -1,5 +1,6 @@
-import { useState } from 'react';
-
+import React, { useState,useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 // material-ui
 import {
   Avatar,
@@ -72,6 +73,19 @@ const status = [
 const DashboardDefault = () => {
   const [value, setValue] = useState('today');
   const [slot, setSlot] = useState('week');
+  const token = useSelector((state) => state.authSlice.token);
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    isAlreadySignin();
+  }, [token]);
+
+  const isAlreadySignin = () => {
+    if(token === 33333){
+      navigate('/login');
+      // return redirect("/register");
+    }
+  };
 
   return (
     <Grid container rowSpacing={4.5} columnSpacing={2.75}>
