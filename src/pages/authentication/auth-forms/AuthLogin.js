@@ -1,7 +1,9 @@
+"use client"
 import React, { useEffect } from 'react';
 import { Link as RouterLink, redirect, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAccount } from '../../../store/reducers/authSlice';
+import empAPI from 'api/mockuserapi';
 
 // material-ui
 import {
@@ -46,9 +48,8 @@ const AuthLogin = () => {
   }, [token]);
 
   const isAlreadySignin = () => {
-    if(token === 22222){
+    if (token === 22222) {
       navigate('/');
-      // return redirect("/register");
     }
   };
 
@@ -65,12 +66,19 @@ const AuthLogin = () => {
     event.preventDefault();
   };
 
-  const signin = (...rest) => {
+  const signin = async (...rest) => {
     const [values, setStatus, setSubmitting] = rest;
-    const newObj = { ...values, token: 22222 };
-    dispatch(loginAccount(newObj));
-    setStatus({ success: false });
-    setSubmitting(false);
+    try {
+      const result = await empAPI.getLoginToken(values);
+      if (result?.data) {
+        const newObj = { ...values, token: result?.data?.token };
+        dispatch(loginAccount(newObj));
+        setStatus({ success: false });
+        setSubmitting(false);
+      }
+    } catch (e) {
+        alert (e.message)
+    }
   };
 
   return (
