@@ -5,7 +5,7 @@ const initialLoginState = {
   email: 'pradeep.srivastav@rsystems.com',
   password: '123456',
   role: 'admin',
-  token: 33333
+  token: "" //22222
 };
 
 // ==============================|| SLICE - MENU ||============================== //
@@ -17,7 +17,7 @@ const authSlice = createSlice({
     loginAccount(state, action) {
       state.email = action.payload.email;
       state.password = action.payload.password;
-      state.token = action.payload?.token || "";
+      state.token = action.payload?.token || ""; 
     },
     logoutAccount(state, action) {
       state.email = '';

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import useCurrentToken from '../../utils/useCurrentToken';
 // material-ui
 import {
   Avatar,
@@ -75,15 +76,20 @@ const DashboardDefault = () => {
   const [slot, setSlot] = useState('week');
   const token = useSelector((state) => state.authSlice.token);
   const navigate = useNavigate();
+  const [token2] = useCurrentToken(token);
   
   useEffect(() => {
+    
+    console.log(token2, 'eee');
     isAlreadySignin();
   }, [token]);
 
   const isAlreadySignin = () => {
-    if(token === 33333){
+    if(token === ""){ //22222
       navigate('/login');
       // return redirect("/register");
+    }else{
+      console.log(token)
     }
   };
 

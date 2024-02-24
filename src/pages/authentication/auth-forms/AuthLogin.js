@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useEffect } from 'react';
 import { Link as RouterLink, redirect, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,12 +43,14 @@ const AuthLogin = () => {
   const storeEmail = useSelector((state) => state.authSlice.email);
   const storePassword = useSelector((state) => state.authSlice.password);
   const token = useSelector((state) => state.authSlice.token);
+
   useEffect(() => {
     isAlreadySignin();
   }, [token]);
 
   const isAlreadySignin = () => {
-    if (token === 22222) {
+    if (token !== '') {
+      //22222
       navigate('/');
     }
   };
@@ -70,14 +72,15 @@ const AuthLogin = () => {
     const [values, setStatus, setSubmitting] = rest;
     try {
       const result = await empAPI.getLoginToken(values);
-      if (result?.data) {
-        const newObj = { ...values, token: result?.data?.token };
+      debugger;
+      if (result?.data && result?.data?.jwtToken) {
+        const newObj = { ...values, token: result?.data?.jwtToken };
         dispatch(loginAccount(newObj));
         setStatus({ success: false });
         setSubmitting(false);
       }
     } catch (e) {
-        alert (e.message)
+      alert(e.message);
     }
   };
 

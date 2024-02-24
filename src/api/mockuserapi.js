@@ -1,8 +1,21 @@
+import React from 'react';
 import axios from 'axios';
+//import useCurrentToken from '../utils/useCurrentToken';
 
 axios.interceptors.request.use(function (config) {
-  const token = '22222'; //store.getState().session.token;
-  config.headers.Authorization =  token;
+  debugger;
+  let token;
+  //const [token2] =  useCurrentToken();
+  //console.log(token2, "eee")
+  const localTokenString = localStorage.getItem('persist:root');
+  if (localTokenString) {
+    var localTokenJson = JSON.parse(localTokenString);
+    if (localTokenJson?.authSlice) {
+      const sliceJson = JSON.parse(localTokenJson?.authSlice);
+      token = sliceJson?.token;
+    }
+  }
+  config.headers.Authorization = `Bearer ${token}`;
   config.headers.common = {
     Accept: 'application/json, text/plain, */*',
     'Content-Type': 'application/json',
