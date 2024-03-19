@@ -3,7 +3,6 @@ import axios from 'axios';
 //import useCurrentToken from '../utils/useCurrentToken';
 
 axios.interceptors.request.use(function (config) {
-  debugger;
   let token;
   //const [token2] =  useCurrentToken();
   //console.log(token2, "eee")
@@ -35,4 +34,5 @@ const employeeAPI = {
   getList,
   getLoginToken
 };
+
 export default employeeAPI;
