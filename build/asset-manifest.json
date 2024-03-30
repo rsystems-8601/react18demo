@@ -1,20 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.e1f2bb6b.css",
-    "main.js": "/static/js/main.6d0e62f7.js",
-    "static/js/703.4e5a4752.chunk.js": "/static/js/703.4e5a4752.chunk.js",
-    "static/js/122.cbb2d2fb.chunk.js": "/static/js/122.cbb2d2fb.chunk.js",
-    "static/js/73.799b383f.chunk.js": "/static/js/73.799b383f.chunk.js",
-    "static/js/378.03a027d4.chunk.js": "/static/js/378.03a027d4.chunk.js",
+    "main.js": "/static/js/main.60db1c5a.js",
+    "static/js/725.e16b6434.chunk.js": "/static/js/725.e16b6434.chunk.js",
+    "static/js/122.6794be6a.chunk.js": "/static/js/122.6794be6a.chunk.js",
+    "static/js/312.d4722082.chunk.js": "/static/js/312.d4722082.chunk.js",
+    "static/js/537.99aacce1.chunk.js": "/static/js/537.99aacce1.chunk.js",
+    "static/js/52.dcd90e28.chunk.js": "/static/js/52.dcd90e28.chunk.js",
     "static/js/740.b5677068.chunk.js": "/static/js/740.b5677068.chunk.js",
     "static/js/298.7da48ca2.chunk.js": "/static/js/298.7da48ca2.chunk.js",
     "static/js/297.cbd486d6.chunk.js": "/static/js/297.cbd486d6.chunk.js",
     "static/js/532.d5374251.chunk.js": "/static/js/532.d5374251.chunk.js",
     "static/js/685.835effa4.chunk.js": "/static/js/685.835effa4.chunk.js",
+    "static/js/939.8b5bbcaa.chunk.js": "/static/js/939.8b5bbcaa.chunk.js",
     "static/js/381.6d9c783b.chunk.js": "/static/js/381.6d9c783b.chunk.js",
-    "static/js/766.7709e35a.chunk.js": "/static/js/766.7709e35a.chunk.js",
     "static/js/469.37e142e3.chunk.js": "/static/js/469.37e142e3.chunk.js",
-    "static/js/402.84d317dc.chunk.js": "/static/js/402.84d317dc.chunk.js",
+    "static/js/714.4405c1f6.chunk.js": "/static/js/714.4405c1f6.chunk.js",
+    "static/js/306.5ee18f64.chunk.js": "/static/js/306.5ee18f64.chunk.js",
+    "static/js/966.b51e6250.chunk.js": "/static/js/966.b51e6250.chunk.js",
+    "static/js/11.c9d500cb.chunk.js": "/static/js/11.c9d500cb.chunk.js",
+    "static/js/473.2e9d4198.chunk.js": "/static/js/473.2e9d4198.chunk.js",
     "index.html": "/index.html",
     "static/media/google.svg": "/static/media/google.a025da87054139fc16b3b9b7ed0a2724.svg",
     "static/media/twitter.svg": "/static/media/twitter.3e49f64208e00f377e9c3dbeaed797ce.svg",
@@ -22,6 +27,6 @@
   },
   "entrypoints": [
     "static/css/main.e1f2bb6b.css",
-    "static/js/main.6d0e62f7.js"
+    "static/js/main.60db1c5a.js"
   ]
 }
